@@ -17,9 +17,7 @@ namespace RedditLab.Controllers
 
         public IActionResult Index()
         {
-            Subreddit aww = db.GetSubreddit();
-
-            Child[] posts = db.GetSubData(aww);
+            Child[] posts = db.GetSubData();
 
             return View(posts);
         }

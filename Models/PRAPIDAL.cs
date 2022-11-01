@@ -14,8 +14,9 @@ namespace RedditLab.Models
             return sr;
         }
 
-        public Child[] GetSubData(Subreddit sub)
+        public Child[] GetSubData()
         {
+            Subreddit sub = GetSubreddit();
             Data subData = sub.data;
             Child[] postList = subData.children;
 
@@ -24,8 +25,7 @@ namespace RedditLab.Models
 
         public Child GetPost(int index)
         {
-            Subreddit sub = GetSubreddit();
-            Child[] postList = GetSubData(sub);
+            Child[] postList = GetSubData();
             Child post = postList[index];
             return post;
         }
