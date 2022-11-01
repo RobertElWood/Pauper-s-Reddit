@@ -1,0 +1,19 @@
+﻿@model Child[]
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to r/Awww!</h1>
+    <p>Your one-stop-shop for pictures of things that are both cute and cuddly.</p>
+    <p>Check out our list of current posts below!!!</p>
+    <br>
+    <br>
+
+    @for (int i = 1; i < Model.Count(); i++)
+    {
+            <div>
+                <a asp-action="ViewPost" asp-controller="Home" asp-route-Id="@i"><p>*Post @i, by @Model[i].data.author*</p></a>
+                <br>
+                <br>
+            </div>
+    }
+
+</div>

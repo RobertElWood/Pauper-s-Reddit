@@ -1,0 +1,17 @@
+﻿@model Child
+
+<div class="text-center">
+    <h2>@Model.data.title</h2>
+    <p>@Model.data.author</p>
+    <br>
+    @if(Model.data.url_overridden_by_dest.Contains(".jpg") == true)
+    {
+       <img src = "@Model.data.url_overridden_by_dest" width="500" height="600"/>
+    } 
+    else 
+    {
+       <img src = "@Model.data.thumbnail" width="300" height="300"/>
+    }
+    <br>
+    <br>
+</div>
